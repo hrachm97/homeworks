@@ -12,6 +12,7 @@ struct Output {
     bool carry_out = 0;
 };
 
+//this is the virtual implementation of full adder which has 3 inputs: a, b, and carry in; and 2 outputs which is the type we created beforehand
 Output full_adder(bool a, bool b, bool carry_in) {
     Output num_out;
     num_out.sum = (a ^ b) ^ carry_in;
