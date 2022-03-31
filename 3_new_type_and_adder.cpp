@@ -1,5 +1,7 @@
 #include <iostream>
 
+bool overflow_flag;
+
 //Creating a new type Hex which contains 4 bits so can hold numbers from 0 to 15
 struct Hex {
     bool n[4] = {};
@@ -33,6 +35,8 @@ Hex adder(Hex num1, Hex num2) {
 Hex input_hex() {
     int n;
     std::cin >> n;
+    if (n > 15) n = 15;
+    if (n < 0) n = 0;
     Hex sample;
     short base = 2;
     for (int i = 0; i < 4; ++i) {
@@ -53,18 +57,21 @@ int pow(int num, int power) {
     if (power == 0) return 1;
     return num * pow(num, power - 1);
 }
-void print_hex(Hex num) {
+void print_hex(Hex num, bool overflow = false) {
     int dec = 0;
     for (int i = 0; i < 4; ++i)
         dec += num.n[i] * pow(2, 3 - i);
-    std::cout << dec;
+    (overflow) ? std::cout << dec + 16 * overflow_flag : std::cout << dec;
     std::cout << std::endl;
 }
 
 int main() {
     Hex num1 = input_hex();
+    std::cout << "+\n";
     Hex num2 = input_hex();
+    std::cout << "=\n";
     Hex sum = adder(num1, num2);
-    print_hex(sum);
+    print_hex(sum, true);
+    std::cout << "overflow flag: " << overflow_flag << ';' << std::endl;
     return 0;
 }
