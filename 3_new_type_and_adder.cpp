@@ -19,6 +19,7 @@ Output full_adder(bool a, bool b, bool carry_in) {
     num_out.carry_out = (a & b) | ((a ^ b) & carry_in);
     return num_out;
 }
+//this is a virtual implementation of 4 bit adder
 Hex adder(Hex num1, Hex num2) {
     Hex numSum;
     bool carry_in = 0;
