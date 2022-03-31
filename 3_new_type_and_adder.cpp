@@ -30,6 +30,7 @@ Hex adder(Hex num1, Hex num2) {
         numSum.n[3 - i] = num_out.sum;
         carry_in = num_out.carry_out;
     }
+    ::overflow_flag = carry_in;
     return numSum;
 }
 Hex input_hex() {
