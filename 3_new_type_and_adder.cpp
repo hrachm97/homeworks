@@ -22,7 +22,7 @@ Output full_adder(bool a, bool b, bool carry_in) {
     return num_out;
 }
 //this is a virtual implementation of 4 bit adder
-Hex adder(Hex num1, Hex num2) {
+Hex add(Hex num1, Hex num2) {
     Hex numSum;
     bool carry_in = 0;
     for (int i = 0; i < 4; ++i) {
@@ -71,7 +71,7 @@ int main() {
     std::cout << "+\n";
     Hex num2 = input_hex();
     std::cout << "=\n";
-    Hex sum = adder(num1, num2);
+    Hex sum = add(num1, num2);
     print_hex(sum, true);
     std::cout << "overflow flag: " << overflow_flag << ';' << std::endl;
     return 0;
