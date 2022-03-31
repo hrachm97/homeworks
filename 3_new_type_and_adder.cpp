@@ -1,9 +1,12 @@
 #include <iostream>
 
+//Creating a new type Hex which contains 4 bits so can hold numbers from 0 to 15
 struct Hex {
     bool n[4] = {};
 };
 
+//in order to create the virtual implementation of the full adder we must have a type
+//for outputing 2 bytes: the sum and the carry out
 struct Output {
     bool sum = 0;
     bool carry_out = 0;
