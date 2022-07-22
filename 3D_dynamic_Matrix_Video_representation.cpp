@@ -220,7 +220,7 @@ std::ostream& operator<<(std::ostream& os, const Video& V) {
 }
 
 int main() {
-    Video v(5,6, Pixel(155,155,155)); // Ստեղծում ենք սպիտակ նկար 5x6 չափի
+    Video v(5,6, Pixel(155,155,155)); // Ստեղծում ենք մեկ կադրանոց սպիտակ վիդեո 5x6 չափի
     std::cout << v << std::endl;
     v.crop(4, 5);
     std::cout << v << std::endl;
